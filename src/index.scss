@@ -1,0 +1,46 @@
+.m-10 {
+  margin: 10px;
+}
+
+// SCSS----------------------------------------------------------
+
+$primaryClr: rgb(195, 69, 11);
+$secondaryClr: rgba(5, 102, 5, 0.988);
+
+.brdr {
+  border: 5px solid $primaryClr;
+  width: fit-content;
+}
+
+// ----------------------------------------------------------
+$margin-sizes: 5, 10, 15, 20, 25;
+
+@each $size in $margin-sizes {
+  .m-#{$size} {
+    margin: #{$size}px;
+  }
+}
+
+$margin-bottom: 5, 10, 15, 20, 25;
+@each $size in $margin-bottom {
+  .mb-#{$size} {
+    margin-bottom: #{$size}px;
+  }
+}
+// ----------------------------------------------------------
+
+@mixin brdrSecond {
+  border: 5px solid $secondaryClr;
+}
+
+.bx {
+  @include brdrSecond();
+  background-color: rgb(238, 131, 219);
+}
+
+.btn-bx {
+  @include brdrSecond();
+  background-color: rgb(236, 210, 7);
+  font-weight: bolder;
+  width: 290px;
+}
